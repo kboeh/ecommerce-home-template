@@ -1,3 +1,3 @@
 # knickknacks
-Website for selling antiques and more.
-Under development...stay tuned
+Website for selling antiques and more. <br>
+Under development...stay tuned.
