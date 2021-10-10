@@ -12,53 +12,79 @@
 </head>
 
 <body>
-
-    <head>
+    <header>
+        <div class="search">
+            <button>
+                <img src="img/search.png" alt="magnifier">
+            </button>
+            <input type="text" placeholder="Search">
+        </div>
+        <input type="checkbox" id="navToggle" class="navToggle">
         <nav>
-            <a href=""><img src="img/Logo PNG 1.png" alt=""></a>
+            <ul>
+                <li><a href="#">Furniture</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Crockery</a></li>
+                <li><a href="#">Toys</a></li>
+                <li><a href="#">Art</a></li>
+                <li><a href="#">Clothes</a></li>
+                <li><a href="#">Jewelry</a></li>
+            </ul>
         </nav>
-    </head>
+        <label for="navToggle" class="ham">
+            <span class="top-line"></span>
+            <span class="mid-line"></span>
+            <span class="bot-line"></span>
+            <!-- This creates a clickable label -->
+        </label>
+
+        <a class="logo" href=""><img src="img/Logo PNG 1.png" alt=""></a>
+    </header>
 
 
     <div class="img-container">
         <a href="">
-            <img src="img/Rectangle 29.png" alt="">
             <p>SHOP FURNITURE</p>
+            <img src="img/Rectangle 29.png" alt="">
         </a>
         <a href="">
-            <img src="img/Rectangle 30.png" alt="">
             <p>SHOP BOOKS</p>
+            <img src="img/Rectangle 30.png" alt="">
         </a>
         <a href="">
-            <img src="img/Rectangle 31.png" alt="">
             <p>Shop PORCELAIN</p>
+            <img src="img/Rectangle 31.png" alt="">
         </a>
         <a href="">
-            <img src="img/Rectangle 32.png" alt="">
             <p>SHOP TOYS</p>
+            <img src="img/Rectangle 32.png" alt="">
         </a>
         <a href="">
-            <img src="img/Rectangle 33.png" alt="">
             <p>SHOP ART</p>
+            <img src="img/Rectangle 33.png" alt="">
         </a>
         <a href="">
-            <img src="img/Rectangle 34.png" alt="">
             <p>SHOP CLOTHES</p>
+            <img src="img/Rectangle 34.png" alt="">
         </a>
         <a href="">
-            <img src="img/Rectangle 35.png" alt="">
             <p>SHOP JEWELRY</p>
+            <img src="img/Rectangle 35.png" alt="">
+
         </a>
         <a href="" class="last-img">
-            <img src="img/More Knickknacks no flower red 1.png" alt="">
             <p>SHOP MORE</p>
+            <div>
+                <img src="img/More Knickknacks no flower red 1.png" alt="">
+            </div>
         </a>
     </div>
 
     <div class="about-container">
-        <h1>WHAT IS MORE KNICKKNACKS?</h1>
-        <a href="">Read the story on how
-            More Knickknacks got its start.</a>
+        <h1>WHAT IS <br> MORE KNICKKNACKS?</h1>
+        <a href="">Read the story on how <br>
+            More Knickknacks got its start.
+        </a>
     </div>
 
     <footer>
@@ -69,6 +95,16 @@
             <li>Returns & Exchanges</li>
         </ul>
     </footer>
+
+    <div class="account">
+        <ul>
+            <li><a href="#"><img src="img/home.png" alt=""> Home</a></li>
+            <li><a href="#"><img src="img/fav.png" alt="">Favorites</a></li>
+            <li><a href="#"><img src="img/notice.png" alt="">Updates</a></li>
+            <li><a href="#"><img src="img/user.png" alt="">You</a></li>
+            <li><a href="#"><img src="img/Cart.png" alt="">Cart</a></li>
+        </ul>
+    </div>
 
     <script src="app.js"></script>
 </body>

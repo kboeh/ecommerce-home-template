@@ -4,34 +4,310 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    scroll-padding-top: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.body {
+    /* width: 100vw; */
+}
+
+header {
+    background: white;
+    text-align: left;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    position: fixed;
+    top: 0;
+    height: 55px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #828282;
+    background-color: white;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.search input, button {
+    border: none;
+}
+
+.search input {
+    font-family: 'Josefin Sans' sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    height: 28px;
+    width: 300px;
+    border-radius: 50px;
+    padding-left: 10px;
+}
+
+.search input:focus {
+    outline: 1px solid #E4E4E4;
+}
+
+.search button {
+    background-color: white;
+    margin: 15px 16px 15px 16px;
+    cursor: pointer;
+}
+
+nav {
+    position: absolute;
+    text-align: center;
+    background: white;
+    width: 100%;
+    height: fit-content;
+    top: 137px;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #828282;
+    text-decoration: none;
+    /* font-size: 1.2rem; */
+    text-transform: uppercase;
+    /* fade effect below */
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: #EA5652;
+}
+
+.navToggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+.navToggle:checked ~ nav a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+.navToggle {
+    display: none;
+    /* This makes the checkbox invisible. The label "ham" is used to toggle the nav bar. */
+}
+
+.ham {
+    padding: 54px 0 0 16px;
+    height: fit-content;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ham span {
+    display: block;
+    background: #3E6FB2;
+    height: 4px;
+    width: 2em;
+    border-radius: 2px;
+    /* speed/effect of hamB to x */
+    transition: transform 150ms ease-in-out, opacity 200ms linear;
+}
+
+/* rotates one line into part of the X */
+.navToggle:checked ~ label .mid-line {
+    transform: rotate(45deg);
+}
+  
+/* makes one line dissapear */
+.navToggle:checked ~ label .top-line {
+    opacity: 0;
+}
+  
+/* rotates another line into part of the X */
+.navToggle:checked ~ label .bot-line {
+    transform: rotate(135deg) translate(-8px, 9px);
+}
+
+nav ul .open {
+    /* how far the mobile nav extends */
+    clip-path: inset(0% 0% 0% 0%);
+    -webkit-clip-path: inset(0% 0% 0% 0%);
+}
+
+.logo img{
+    width: auto;
+    height: 40px;
+}
+.logo {
+    margin: 76px 0 16px 16px;
 }
 
 .img-container {
     display: grid;
     grid-template: repeat(4, 1fr) / 1fr 1fr;
+    grid-column-gap: 24px;
     justify-items: center;
     background-color: #3E6FB2;
-    gap: 10px;
+    padding: 5px 18px 24px 18px;
+}
+
+.img-container p {
+    font-family: 'Josefin Sans', sans-serif;
+    /* font-style: normal;
+    font-weight: normal; */
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 9px 0 9px 0;
+}
+
+.img-container img {
+    width: 150px;
+    height: 161px;
+    border-radius: 5px;
 }
 
 .last-img {
-    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.last-img div {
+    background-color: #FFFFFF;
+    width: 150px;
+    height: 161px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.last-img img{
+    
+    width: 121px;
+    height: 50px;
+    
 }
 
 .about-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.about-container h1{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #828282;
+    margin: 40px 0 8px 0;
+}
+
+.about-container a{
+    font-size: 18px;
+    line-height: 18px;
+    text-decoration-line: underline;
+    color: #828282;
+    margin-bottom: 40px;
+}
+
+footer {
+    height: fit-content;
+    background-color: #EA5652;
 }
 
 footer ul {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #EA5652;
-
+    gap: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    padding: 40px 0 100px 0;
 } 
+
+.account {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #FFFFFF;  
+}
+
+.account ul{
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin: 10px 35px 10px 35px;
+}
+
+.account ul a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Josefin Sans' sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 12px;
+    color: #828282;
+}
+
+.account img {
+    height: 20px;
+    width: 20px;
+}
+
+/* @media (min-width: 920px) {
+    header {
+        display: grid;
+        grid-template: repeat(2, 1fr) / 1fr 1fr;
+    }
+} */
