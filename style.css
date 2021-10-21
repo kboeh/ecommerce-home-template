@@ -11,11 +11,8 @@ html {
     scroll-behavior: smooth;
 }
 
-.body {
-    /* width: 100vw; */
-}
-
 header {
+    position: fixed;
     background: white;
     text-align: left;
     width: 100%;
@@ -25,40 +22,41 @@ header {
 }
 
 .search {
-    position: fixed;
-    top: 0;
-    height: 55px;
+    height: 35px;
     width: 100%;
     display: flex;
     align-items: center;
     color: #828282;
     background-color: white;
-    border-bottom: 1px solid #E4E4E4;
+    border: 1px solid #828282;
+    border-radius: 50px;
+    margin: 10px 8px 10px 8px;
 }
 
 .search input, button {
     border: none;
 }
 
-.search input {
-    font-family: 'Josefin Sans' sans-serif;
+.search input{
+    font-family: 'Josefin Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 14px;
-    height: 28px;
-    width: 300px;
-    border-radius: 50px;
-    padding-left: 10px;
+    color: #828282;
+    padding-top: 5px;
+    width: 80%;
 }
 
 .search input:focus {
-    outline: 1px solid #E4E4E4;
+    outline: none;
 }
 
 .search button {
+    width: 21px;
+    height: auto;
     background-color: white;
-    margin: 15px 16px 15px 16px;
+    margin: 4px 10px 0 9px;
     cursor: pointer;
 }
 
@@ -68,7 +66,7 @@ nav {
     background: white;
     width: 100%;
     height: fit-content;
-    top: 137px;
+    top: 60px;
     transform: scale(1, 0);
     transform-origin: top;
     transition: transform 400ms ease-in-out;
@@ -81,8 +79,7 @@ nav ul {
 }
 
 nav li {
-    margin-bottom: 1em;
-    margin-left: 1em;
+    margin: 5px 0 10px 0;
 }
 
 nav a {
@@ -92,8 +89,6 @@ nav a {
     line-height: 18px;
     color: #828282;
     text-decoration: none;
-    /* font-size: 1.2rem; */
-    text-transform: uppercase;
     /* fade effect below */
     opacity: 0;
     transition: opacity 150ms ease-in-out;
@@ -118,7 +113,7 @@ nav a:hover {
 }
 
 .ham {
-    padding: 54px 0 0 16px;
+    padding: 16px 0 16px 8px;
     height: fit-content;
     gap: 8px;
     display: flex;
@@ -158,32 +153,65 @@ nav ul .open {
     -webkit-clip-path: inset(0% 0% 0% 0%);
 }
 
-.logo img{
-    width: auto;
-    height: 40px;
-}
 .logo {
-    margin: 76px 0 16px 16px;
+    display: none;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    padding-top: 60px;
+}
+
+.hero img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero p{
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    margin: 0 8px 0 8px;
 }
 
 .img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3E6FB2;
+    padding: 0 20px 40px 20px;
+}
+
+.img-box {
     display: grid;
-    grid-template: repeat(4, 1fr) / 1fr 1fr;
+    grid-template: repeat(2, 1fr) / 1fr 1fr;
     grid-column-gap: 24px;
     justify-items: center;
-    background-color: #3E6FB2;
-    padding: 5px 18px 24px 18px;
 }
 
 .img-container p {
-    font-family: 'Josefin Sans', sans-serif;
-    /* font-style: normal;
-    font-weight: normal; */
-    font-size: 14px;
-    line-height: 14px;
+   font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
     color: #FFFFFF;
     text-align: center;
+}
+
+.img-title {
+    font-size: 24px;
+    line-height: 24px;
+    margin: 40px 0 24px 0;
+}
+
+.img-box p {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 13px;
     margin: 9px 0 9px 0;
 }
 
@@ -224,7 +252,6 @@ nav ul .open {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* justify-content: center; */
 }
 
 .about-container {
@@ -255,6 +282,7 @@ nav ul .open {
 footer {
     height: fit-content;
     background-color: #EA5652;
+    padding: 24px 0 24px 0;
 }
 
 footer ul {
@@ -270,14 +298,14 @@ footer ul {
     line-height: 18px;
     text-transform: capitalize;
     color: #FFFFFF;
-    padding: 40px 0 100px 0;
+    
 } 
 
 .account {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: #FFFFFF;  
+    background: #FFFFFF;
 }
 
 .account ul{
@@ -287,12 +315,12 @@ footer ul {
     margin: 10px 35px 10px 35px;
 }
 
-.account ul a{
+.account a{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    font-family: 'Josefin Sans' sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 12px;
@@ -305,9 +333,236 @@ footer ul {
     width: 20px;
 }
 
-/* @media (min-width: 920px) {
+@media (min-width: 600px) {
+    .search {
+        margin: 20px 10px 20px 10px;
+        height: 40px;
+    }
+
+    .search input{
+        font-size: 18px;
+    }
+
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero p{
+        font-size: 20px;
+        line-height: 25px;
+        padding: 0 20px 0 20px;
+    }
+
+    .img-title {
+        font-size: 28px;
+        margin: 56px 0 32px 0;
+    }
+    
+    .img-box p {
+        font-size: 18px;
+        margin: 16px 0 16px 0;
+    }
+    
+    .img-container img {
+        width: 273px;
+        height: 296px;
+    }
+    
+    .last-img div {
+        width: 273px;
+        height: 296px;
+    }
+    
+    .last-img img{
+        width: 230px;
+        height: auto;
+    }
+
+    footer ul {
+        flex-direction: row;
+        margin-bottom: 53px;
+    } 
+
+    .account ul{
+        gap: 100px;
+    }
+}
+
+@media (min-width: 1000px) {
     header {
         display: grid;
-        grid-template: repeat(2, 1fr) / 1fr 1fr;
+        grid-template: 1fr 60px / 195px 1fr 237px;
+        grid-template-areas: 'logo search account'
+                             'nav nav nav';
     }
-} */
+
+    .ham {
+        display: none;
+    }
+
+    .logo {
+        display: initial;
+        grid-area: logo;
+        margin: 24px 0 0 42px;
+    }
+
+    .logo img{
+        width: auto;
+        height: 62px;
+    }
+
+    .search {
+        grid-area: search;
+        width: 97%;
+        height: 50px;
+        margin: 10px 0 0 16px;
+        align-self: center;
+    }
+
+    .search button {
+        margin-left: 16px;
+    }
+
+    .search input {
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+        margin-left: 16px;
+    }
+
+    .search img {
+        width: 30px;
+        padding-top: 1px;
+        height: fit-content;
+    }
+
+    .hero p{
+        font-size: 30px;
+        line-height: 30px;
+        padding: 0 20px 0 20px;
+    }
+
+    .account-home {
+        display: none;
+    }
+
+    .account {
+        position: initial;
+        grid-area: account;
+        padding: 8px 0 0 0;
+    }
+
+    .account ul {
+        justify-content: initial;
+        justify-content: center;
+        margin: 0 30px 0 0;
+        gap: 32px;
+    }
+
+    .account img {
+        height: 25px;
+        width: auto;
+        margin-top: 5px;
+    }
+
+    .account ul a {
+        font-size: 15px;
+        gap: 10px;
+    }
+
+    nav {
+        position: initial;
+        transform: none;
+        grid-area: nav;
+    }
+
+    nav ul {
+        display: flex;
+        margin: 0 20px 0 20px;
+        justify-content: space-between;
+    }
+
+    nav a {
+        opacity: initial;
+        font-size: 14px;
+        text-transform: initial;
+    }
+
+    .hero {
+        padding-top: 151px;
+    }
+
+    .img-box {
+        display: flex;
+        gap: 48px;
+    }
+
+    .img-title {
+        font-size: 30px;
+        line-height: 48px;
+    }
+    
+    .img-box p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 0 16px 0;
+    }
+    
+    .img-container img {
+        width: 203px;
+        height: 226px;
+    }
+    
+    .last-img div {
+        width: 203px;
+        height: 226px;
+    }
+    
+    .last-img img{
+        width: 180px;
+        height: auto;
+    }
+
+    footer {
+        height: 66px;
+    }
+}
+
+@media (min-width: 1350px) {
+    nav ul {
+        margin: 0 50px 0 50px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+    .hero p{
+        font-size: 48px;
+        line-height: 48px;
+        padding: 0 80px 0 80px;
+    }
+
+    .img-title {
+        font-size: 48px;
+    }
+    
+    .img-box p {
+        font-size: 24px;
+    }
+    
+    .img-container img {
+        width: 303px;
+        height: 326px;
+    }
+    
+    .last-img div {
+        width: 303px;
+        height: 326px;
+    }
+    
+    .last-img img{
+        width: 275px;
+        height: 114px;
+    }
+}

@@ -13,24 +13,9 @@
 
 <body>
     <header>
-        <div class="search">
-            <button>
-                <img src="img/search.png" alt="magnifier">
-            </button>
-            <input type="text" placeholder="Search">
-        </div>
+        <a class="logo" href=""><img src="img/Logo PNG 1.png" alt=""></a>
         <input type="checkbox" id="navToggle" class="navToggle">
-        <nav>
-            <ul>
-                <li><a href="#">Furniture</a></li>
-                <li><a href="#">Books</a></li>
-                <li><a href="#">Crockery</a></li>
-                <li><a href="#">Toys</a></li>
-                <li><a href="#">Art</a></li>
-                <li><a href="#">Clothes</a></li>
-                <li><a href="#">Jewelry</a></li>
-            </ul>
-        </nav>
+
         <label for="navToggle" class="ham">
             <span class="top-line"></span>
             <span class="mid-line"></span>
@@ -38,46 +23,89 @@
             <!-- This creates a clickable label -->
         </label>
 
-        <a class="logo" href=""><img src="img/Logo PNG 1.png" alt=""></a>
+        <div class="search">
+            <button>
+                <img src="img/search.png" alt="magnifier">
+            </button>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="account">
+            <ul>
+                <li class="account-home"><a href="#"><img src="img/home.png" alt=""> Home</a></li>
+                <li><a href="#"><img src="img/user.png" alt="">Login</a></li>
+                <li><a href="#"><img src="img/fav.png" alt="">Favorites</a></li>
+                <li><a href="#"><img src="img/Cart.png" alt="">Cart</a></li>
+            </ul>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Furniture</a></li>
+                <li><a href="#">Art & Collectibles</a></li>
+                <li><a href="#">Clothing</a></li>
+                <li><a href="#">Jewelry & Accessories</a></li>
+                <li><a href="#">Porcelain & Pottery</a></li>
+                <li><a href="#">Antique & Vintage</a></li>
+                <li><a href="#">Toys & Entertainment</a></li>
+                <li><a href="#">Clocks</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <div class="hero">
+        <img src="img/hero.png" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis eget libero, urna, non tincidunt tellus cum.
+            Convallis mauris erat et.
+        </p>
+
+    </div>
 
     <div class="img-container">
-        <a href="">
-            <p>SHOP FURNITURE</p>
-            <img src="img/Rectangle 29.png" alt="">
-        </a>
-        <a href="">
-            <p>SHOP BOOKS</p>
-            <img src="img/Rectangle 30.png" alt="">
-        </a>
-        <a href="">
-            <p>Shop PORCELAIN</p>
-            <img src="img/Rectangle 31.png" alt="">
-        </a>
-        <a href="">
-            <p>SHOP TOYS</p>
-            <img src="img/Rectangle 32.png" alt="">
-        </a>
-        <a href="">
-            <p>SHOP ART</p>
-            <img src="img/Rectangle 33.png" alt="">
-        </a>
-        <a href="">
-            <p>SHOP CLOTHES</p>
-            <img src="img/Rectangle 34.png" alt="">
-        </a>
-        <a href="">
-            <p>SHOP JEWELRY</p>
-            <img src="img/Rectangle 35.png" alt="">
+        <p class="img-title">NEW ARRIVALS</p>
+        <div class="img-box">
+            <a href="">
+                <p>vintage white chair</p>
+                <img src="img/Rectangle 29.png" alt="">
+            </a>
+            <a href="">
+                <p>South American Rug</p>
+                <img src="img/rug.png" alt="">
+            </a>
+            <a href="">
+                <p>floral dining set</p>
+                <img src="img/Rectangle 31.png" alt="">
+            </a>
+            <a href="">
+                <p>1960 Adler
+                    Typewriter</p>
+                <img src="img/type.png" alt="">
+            </a>
+        </div>
 
-        </a>
-        <a href="" class="last-img">
-            <p>SHOP MORE</p>
-            <div>
-                <img src="img/More Knickknacks no flower red 1.png" alt="">
-            </div>
-        </a>
+        <p class="img-title">FEATURED PRODUCTS</p>
+        <div class="img-box">
+            <a href="">
+                <p>ART</p>
+                <img src="img/Rectangle 33.png" alt="">
+            </a>
+            <a href="">
+                <p>CLOTHES</p>
+                <img src="img/Rectangle 34.png" alt="">
+            </a>
+            <a href="">
+                <p>JEWELRY</p>
+                <img src="img/Rectangle 35.png" alt="">
+
+            </a>
+            <a href="" class="last-img">
+                <p>MORE</p>
+                <div>
+                    <img src="img/More Knickknacks no flower red 1.png" alt="">
+                </div>
+            </a>
+        </div>
+
     </div>
 
     <div class="about-container">
@@ -95,16 +123,6 @@
             <li>Returns & Exchanges</li>
         </ul>
     </footer>
-
-    <div class="account">
-        <ul>
-            <li><a href="#"><img src="img/home.png" alt=""> Home</a></li>
-            <li><a href="#"><img src="img/fav.png" alt="">Favorites</a></li>
-            <li><a href="#"><img src="img/notice.png" alt="">Updates</a></li>
-            <li><a href="#"><img src="img/user.png" alt="">You</a></li>
-            <li><a href="#"><img src="img/Cart.png" alt="">Cart</a></li>
-        </ul>
-    </div>
 
     <script src="app.js"></script>
 </body>
