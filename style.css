@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Antique Cherry';
+    src: url(Antique\ Cherry\ -\ Personal\ Use.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +24,7 @@ header {
     color: white;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 .search {
@@ -74,12 +80,11 @@ nav {
 
 nav ul {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     list-style: none;
-}
-
-nav li {
-    margin: 5px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 nav a {
@@ -171,16 +176,29 @@ nav ul .open {
 }
 
 .hero p{
+    justify-self: center;
     font-family: 'Josefin Sans', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 14px;
     text-align: center;
     margin: 0 8px 0 8px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #828282;
+    width: 100%;
 }
 
-.img-container {
+.vintage {
+    font-family: 'Antique Cherry', sans-serif;
+    font-size: 55px;
+    line-height: 55px;
+    text-align: center;
+    color: #EA5652;
+}
+
+.hero-desktop {
+    display: none;
+}
+
+.sales-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,14 +206,15 @@ nav ul .open {
     padding: 0 20px 40px 20px;
 }
 
-.img-box {
+.img-container {
     display: grid;
     grid-template: repeat(2, 1fr) / 1fr 1fr;
     grid-column-gap: 24px;
     justify-items: center;
+
 }
 
-.img-container p {
+.sales-container p {
    font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -205,20 +224,84 @@ nav ul .open {
 .img-title {
     font-size: 24px;
     line-height: 24px;
-    margin: 40px 0 24px 0;
+    margin: 40px 0 0 0;
 }
 
-.img-box p {
+.img-container p {
     font-size: 12px;
     font-weight: 300;
     line-height: 13px;
-    margin: 9px 0 9px 0;
+    margin: 24px 0 8px 0;
 }
 
-.img-container img {
+
+.img-box {
+    /* image overlay */
+    position: relative;
+    width: 100%;
+}
+
+.sales-container img {
     width: 150px;
     height: 161px;
     border-radius: 5px;
+    /* for image overlay */
+    display: block;
+    width: 100%;
+    
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.img-overlay:hover {
+    opacity: 1;
+}
+
+.img-overlay p{
+    text-align: left;
+    padding: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.img-overlay button{
+    height: 50px;
+    width: 100px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 5px;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: #EA5652;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* change this */
+.new-overlay {
+    cursor: pointer;
+}
+
+.featured-overlay {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
 .last-img {
@@ -230,7 +313,7 @@ nav ul .open {
     line-height: 14px;
 }
 
-.last-img div {
+.last-img-box {
     background-color: #FFFFFF;
     width: 150px;
     height: 161px;
@@ -241,10 +324,8 @@ nav ul .open {
 }
 
 .last-img img{
-    
     width: 121px;
     height: 50px;
-    
 }
 
 .about-container {
@@ -298,7 +379,7 @@ footer ul {
     line-height: 18px;
     text-transform: capitalize;
     color: #FFFFFF;
-    
+    padding: 40px 0 92px 0;
 } 
 
 .account {
@@ -315,13 +396,25 @@ footer ul {
     margin: 10px 35px 10px 35px;
 }
 
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 12px;
+    color: #828282;
+    cursor: pointer;
+}
+
 .account a{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
     font-family: 'Josefin Sans', sans-serif;
-    font-style: normal;
     font-weight: 300;
     font-size: 12px;
     line-height: 12px;
@@ -331,6 +424,245 @@ footer ul {
 .account img {
     height: 20px;
     width: 20px;
+}
+
+
+
+/* login below */
+
+
+/* login toggle */
+.login-container.open,
+.open .page-overlay  {
+    display: initial;
+}
+
+.page-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 478px;
+    height: fit-content;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    color: #828282;
+    z-index: 3;
+}
+
+.login-head {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 2px 2px rgba(130, 130, 130, 0.25);
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.login-head p{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 24px 0 24px 24px;
+}
+
+.login-head button{
+    width: 100px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 2px solid #828282;
+    border-radius: 50px;
+    margin: 11px 24px 11px 0;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #828282;
+    padding-top: 5px;
+}
+
+.login-head img{
+    position: absolute;
+    top: -45px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+}
+
+.login-form label {
+    align-self: flex-start;
+    margin: 0 0 2px 23px;
+    color: black;
+}
+
+.login-form input {
+    width: 90%;
+    height: 50px;
+    border: 2px solid #BDBDBD;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 16px;
+}
+
+.forgot {
+    align-self: flex-start;
+    margin: 8px 0 0 23px;
+}
+
+.login-input {
+    height: 40px;
+}
+
+.login-container a {
+    color: #828282;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.login-form button {
+    height: 50px;
+    width: 90%;
+    align-self: center;
+    border-style: none;
+    margin: 24px 0 24px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.sign-button {
+    background: #EA5652;
+}
+
+.google-button {
+    background-color: #3E6FB2;
+}
+
+/* .login-form button:hover {
+    box-shadow: 5px 5px 5px grey;
+} */
+
+
+/* reset password page */
+.reset-password {
+    height: 296px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin: 140px 0 100px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    width: 100%;
+    height: fit-content;
+}
+
+.reset-password h1{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: #828282;
+    padding: 24px;
+    border-bottom: 2px solid rgba(130, 130, 130, 0.25);
+}
+
+.reset-password label{
+    font-size: 18px;
+    line-height: 18px;
+    margin: 24px 24px 8px 24px;
+    color: #000000;
+}
+
+.reset-password input{
+    border: 2px solid #BDBDBD;
+    border-radius: 5px;
+    width: 85%;
+    max-width: 430px;
+    height: 50px;
+    margin: 0 0 48px 24px ;
+}
+
+.reset-password form{
+    display: flex;
+    flex-direction: column;
+}
+
+.reset-password button{
+    width: 100px;
+    height: 50px;
+    background: #EA5652;
+    border-radius: 50px;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0 0 42px 24px;
+    cursor: pointer;
+}
+
+/* about page */
+.about-page-container {
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
+.about-page-container h1{
+    padding: 81px 0 16px 0;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.about-page-container div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-page-container img{
+    width: auto;
+    height: 154px;
+    border-radius: 5px;
+    margin: 16px 0 16px 0;
+}
+
+.about-page-container p{
+    margin: 0 23px 40px 23px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
 }
 
 @media (min-width: 600px) {
@@ -348,22 +680,26 @@ footer ul {
     }
 
     .hero p{
-        font-size: 20px;
-        line-height: 25px;
+        font-size: 30px;
+        line-height: 35px;
         padding: 0 20px 0 20px;
+    }
+
+    .vintage {
+        font-size: 85px;
     }
 
     .img-title {
         font-size: 28px;
-        margin: 56px 0 32px 0;
+        margin: 56px 0 15px 0;
     }
     
-    .img-box p {
-        font-size: 18px;
-        margin: 16px 0 16px 0;
+    .img-container p {
+        font-size: 20px;
+        margin: 35px 0 8px 0;
     }
     
-    .img-container img {
+    .sales-container img {
         width: 273px;
         height: 296px;
     }
@@ -380,11 +716,37 @@ footer ul {
 
     footer ul {
         flex-direction: row;
-        margin-bottom: 53px;
     } 
 
     .account ul{
         gap: 100px;
+    }
+
+    .login-head img{
+        top: 15px;
+        left: 495px;
+    }
+
+    .reset-password {
+        margin: 222px 0 514px 0;
+    }
+
+    /* about page */
+
+    .about-page-container h1{
+        padding-top: 100px;
+        font-size: 36px;
+    }
+
+    .about-page-container img{
+        padding-bottom: 17px;
+        height: 467px;
+    }
+
+    .about-page-container p{
+        font-size: 25px;
+        line-height: 36px;
+        padding: 0 30px 0 30px;
     }
 }
 
@@ -436,10 +798,23 @@ footer ul {
         height: fit-content;
     }
 
+    .hero-mobile {
+        display: none;
+    }
+
+    .hero-desktop {
+        display: initial;
+    }
+
     .hero p{
         font-size: 30px;
         line-height: 30px;
         padding: 0 20px 0 20px;
+    }
+
+    .vintage {
+        font-size: 144px;
+        line-height: 145px;
     }
 
     .account-home {
@@ -465,6 +840,11 @@ footer ul {
         margin-top: 5px;
     }
 
+    .account li{
+        font-size: 15px;
+        gap: 10px;
+    }
+
     .account ul a {
         font-size: 15px;
         gap: 10px;
@@ -478,6 +858,8 @@ footer ul {
 
     nav ul {
         display: flex;
+        flex-direction: row;
+        gap: 0;
         margin: 0 20px 0 20px;
         justify-content: space-between;
     }
@@ -492,23 +874,24 @@ footer ul {
         padding-top: 151px;
     }
 
-    .img-box {
+    .img-container {
         display: flex;
         gap: 48px;
     }
 
     .img-title {
-        font-size: 30px;
+        font-size: 48px;
         line-height: 48px;
+        margin-bottom: 32px;
     }
     
-    .img-box p {
-        font-size: 16px;
+    .img-container p {
+        font-size: 17px;
         line-height: 24px;
         margin: 0 0 16px 0;
     }
     
-    .img-container img {
+    .sales-container img {
         width: 203px;
         height: 226px;
     }
@@ -525,6 +908,36 @@ footer ul {
 
     footer {
         height: 66px;
+    }
+
+    footer ul{
+        padding: 0;
+    }
+
+    .reset-password {
+        width: 65%;
+    }
+
+    /* about page */
+    .about-page-container {
+        padding-bottom: 469px;
+        
+    }
+
+    .about-page-container h1{
+        padding: 231px 0 16px 80px;
+        text-align: left;
+        line-height: 36px;
+    }
+
+    .about-page-container div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .about-page-container img{
+        padding: 0 80px 0 80px;
     }
 }
 
@@ -547,11 +960,11 @@ footer ul {
         font-size: 48px;
     }
     
-    .img-box p {
+    .img-container p {
         font-size: 24px;
     }
     
-    .img-container img {
+    .sales-container img {
         width: 303px;
         height: 326px;
     }
@@ -564,5 +977,10 @@ footer ul {
     .last-img img{
         width: 275px;
         height: 114px;
+    }
+
+    .about-page-container p{
+        font-size: 36px;
+        line-height: 36px;
     }
 }
