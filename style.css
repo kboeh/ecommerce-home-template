@@ -203,15 +203,13 @@ nav ul .open {
     flex-direction: column;
     align-items: center;
     background-color: #3E6FB2;
-    padding: 0 20px 40px 20px;
+    padding: 0 0 40px 0;
 }
 
 .img-container {
     display: grid;
     grid-template: repeat(2, 1fr) / 1fr 1fr;
-    grid-column-gap: 24px;
     justify-items: center;
-
 }
 
 .sales-container p {
@@ -234,6 +232,9 @@ nav ul .open {
     margin: 24px 0 8px 0;
 }
 
+.item-container {
+    margin: 0 10px 0 10px;
+}
 
 .img-box {
     /* image overlay */
@@ -248,7 +249,6 @@ nav ul .open {
     /* for image overlay */
     display: block;
     width: 100%;
-    
 }
 
 .img-overlay {
@@ -270,11 +270,10 @@ nav ul .open {
 
 .img-overlay p{
     text-align: left;
-    padding: 16px;
+    padding-left: 10px;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 24px;
+    font-size: 12px;
+    line-height: 20px;
     color: #FFFFFF;
 }
 
@@ -289,11 +288,6 @@ nav ul .open {
     color: #FFFFFF;
     background: #EA5652;
     border-radius: 50px;
-    cursor: pointer;
-}
-
-/* change this */
-.new-overlay {
     cursor: pointer;
 }
 
@@ -698,10 +692,21 @@ footer ul {
         font-size: 20px;
         margin: 35px 0 8px 0;
     }
+
+    .img-overlay p{
+        padding: 16px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+    }
     
     .sales-container img {
         width: 273px;
         height: 296px;
+    }
+
+    .item-container {
+        margin: 0 15px 0 15px;
     }
     
     .last-img div {
