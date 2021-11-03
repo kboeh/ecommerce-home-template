@@ -45,7 +45,6 @@ header {
 
 .search input{
     font-family: 'Josefin Sans', sans-serif;
-    font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 14px;
@@ -59,10 +58,10 @@ header {
 }
 
 .search button {
-    width: 21px;
-    height: auto;
+    width: 25px;
+    height: 25px;
     background-color: white;
-    margin: 4px 10px 0 9px;
+    margin: 0 10px 0 9px;
     cursor: pointer;
 }
 
@@ -525,6 +524,8 @@ footer ul {
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
 }
 
 .forgot {
@@ -548,6 +549,7 @@ footer ul {
     align-self: center;
     border-style: none;
     margin: 24px 0 24px 0;
+    padding-top: 5px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     color: white;
@@ -602,6 +604,9 @@ footer ul {
     max-width: 430px;
     height: 50px;
     margin: 0 0 48px 24px ;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    padding-left: 10px;
 }
 
 .reset-password form{
