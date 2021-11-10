@@ -162,39 +162,24 @@ nav ul .open {
 }
 
 .hero {
-    display: flex;
-    align-items: center;
-    height: fit-content;
     padding-top: 60px;
 }
 
 .hero img {
-    width: 50%;
+    width: 82%;
     height: auto;
-    object-fit: cover;
+    margin: 5px 0 5px 0;
 }
 
 .hero p{
     justify-self: center;
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
-    margin: 0 8px 0 8px;
+    margin-bottom: 7px;
     font-size: 18px;
     line-height: 18px;
     color: #828282;
     width: 100%;
-}
-
-.vintage {
-    font-family: 'Antique Cherry', sans-serif;
-    font-size: 55px;
-    line-height: 55px;
-    text-align: center;
-    color: #EA5652;
-}
-
-.hero-desktop {
-    display: none;
 }
 
 .sales-container {
@@ -419,10 +404,7 @@ footer ul {
     width: 20px;
 }
 
-
-
 /* login below */
-
 
 /* login toggle */
 .login-container.open,
@@ -630,7 +612,6 @@ footer ul {
 /* about page */
 .about-page-container {
     font-family: 'Josefin Sans', sans-serif;
-    
 }
 
 .about-page-container h1{
@@ -763,7 +744,7 @@ footer ul {
 @media (min-width: 1000px) {
     header {
         display: grid;
-        grid-template: 1fr 60px / 195px 1fr 237px;
+        grid-template: 1fr 60px / 115px 1fr 237px;
         grid-template-areas: 'logo search account'
                              'nav nav nav';
     }
@@ -774,8 +755,9 @@ footer ul {
 
     .logo {
         display: initial;
+        width: fit-content;
         grid-area: logo;
-        margin: 24px 0 0 42px;
+        margin: 24px 0 0 35px;
     }
 
     .logo img{
@@ -792,39 +774,30 @@ footer ul {
     }
 
     .search button {
-        margin-left: 16px;
+        margin: 0 0 3px 16px;
     }
 
     .search input {
         font-weight: normal;
         font-size: 24px;
         line-height: 24px;
-        margin-left: 16px;
+        margin: 2px 0 0 16px;
     }
 
     .search img {
         width: 30px;
-        padding-top: 1px;
         height: fit-content;
-    }
-
-    .hero-mobile {
-        display: none;
-    }
-
-    .hero-desktop {
-        display: initial;
     }
 
     .hero p{
         font-size: 30px;
         line-height: 30px;
         padding: 0 20px 0 20px;
+        margin: 10px 0 20px 0;
     }
 
-    .vintage {
-        font-size: 144px;
-        line-height: 145px;
+    .hero img{
+        width: 773px;
     }
 
     .account-home {
@@ -900,6 +873,10 @@ footer ul {
         line-height: 24px;
         margin: 0 0 16px 0;
     }
+
+    .item-container {
+        margin: 0;
+    }
     
     .sales-container img {
         width: 203px;
@@ -970,6 +947,10 @@ footer ul {
         font-size: 48px;
     }
     
+    .img-container {
+        gap: 35px;
+    }
+
     .img-container p {
         font-size: 24px;
     }
