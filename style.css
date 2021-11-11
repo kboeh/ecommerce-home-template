@@ -25,6 +25,7 @@ header {
     display: flex;
     align-items: center;
     z-index: 1;
+    box-shadow: 0px 0px 3px #828282;
 }
 
 .search {
@@ -162,22 +163,23 @@ nav ul .open {
 }
 
 .hero {
-    padding-top: 60px;
+    padding-top: 85px;
 }
 
 .hero img {
-    width: 82%;
+    width: 80%;
     height: auto;
-    margin: 5px 0 5px 0;
+    margin: 15px 0 15px 0;
 }
 
 .hero p{
     justify-self: center;
     font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
     text-align: center;
-    margin-bottom: 7px;
+    margin-bottom: 20px;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 25px;
     color: #828282;
     width: 100%;
 }
@@ -547,11 +549,6 @@ footer ul {
     background-color: #3E6FB2;
 }
 
-/* .login-form button:hover {
-    box-shadow: 5px 5px 5px grey;
-} */
-
-
 /* reset password page */
 .reset-password {
     height: 296px;
@@ -656,7 +653,7 @@ footer ul {
     }
 
     .hero {
-        padding-top: 80px;
+        padding-top: 110px;
     }
 
     .hero p{
@@ -747,6 +744,7 @@ footer ul {
         grid-template: 1fr 60px / 115px 1fr 237px;
         grid-template-areas: 'logo search account'
                              'nav nav nav';
+        padding-bottom: 15px;
     }
 
     .ham {
@@ -787,17 +785,6 @@ footer ul {
     .search img {
         width: 30px;
         height: fit-content;
-    }
-
-    .hero p{
-        font-size: 30px;
-        line-height: 30px;
-        padding: 0 20px 0 20px;
-        margin: 10px 0 20px 0;
-    }
-
-    .hero img{
-        width: 773px;
     }
 
     .account-home {
@@ -854,7 +841,17 @@ footer ul {
     }
 
     .hero {
-        padding-top: 151px;
+        padding-top: 220px;
+    }
+
+    .hero p{
+        font-size: 48px;
+        line-height: 55px;
+        padding-bottom: 20px;
+    }
+
+    .hero img{
+        width: 773px;
     }
 
     .img-container {
@@ -935,12 +932,6 @@ footer ul {
 
     nav a {
         font-size: 18px;
-    }
-
-    .hero p{
-        font-size: 48px;
-        line-height: 48px;
-        padding: 0 80px 0 80px;
     }
 
     .img-title {
